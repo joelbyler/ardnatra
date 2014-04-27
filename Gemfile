@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'artoo-arduino'
+gem 'dino'
+gem 'subprocess'
