@@ -9,7 +9,7 @@ get '/hi' do
   "Hello World!"
 end
 
-get '/green_on' do
+get '/green' do
 	begin
 	  Subprocess.check_call(['ruby', 'light.rb', '12', 'on'])
 	  return "Success"
@@ -19,19 +19,9 @@ get '/green_on' do
 	  return "OH NOES!"
 	end
 end
-get '/green_off' do
-	begin
-	  Subprocess.check_call(['ruby', 'light.rb', '12', 'off'])
-	  return "Success"
-	rescue Subprocess::NonZeroExit => e
-	  puts e.message
-	  puts "Unable to communicate with device"
-	  return "OH NOES!"
-	end
-end
 
 
-get '/blue_on' do
+get '/blue' do
 	begin
 	  Subprocess.check_call(['ruby', 'light.rb', '11', 'on'])
 	  return "Success"
@@ -41,9 +31,12 @@ get '/blue_on' do
 	  return "OH NOES!"
 	end
 end
-get '/blue_off' do
+
+get '/brightness' do
 	begin
-	  Subprocess.check_call(['ruby', 'light.rb', '11', 'off'])
+	  # brightness = Subprocess.check_output(['ruby', 'sensor.rb', '13'])
+	  # return "Success " + brightness
+	  Subprocess.check_call(['ruby', 'sensor.rb', '13'])
 	  return "Success"
 	rescue Subprocess::NonZeroExit => e
 	  puts e.message
