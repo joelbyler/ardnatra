@@ -1,0 +1,23 @@
+<html lang="en" xmlns:ng="http://angularjs.org" id="ng-app" ng-app="ArduinoController">
+<head>
+  <title>Silly Arduino Web Controller</title>
+  <script type="text/javascript" src="scripts/angular.js"></script>
+  <script type="text/javascript" src="scripts/controller.js"></script>
+  <link href="styles/site.css" rel="stylesheet" type="text/css" />
+</head>
+<body ng-controller="ArduinoControllerCtrl">
+<h2>Arduino Controller</h2>
+<fieldset>
+  <legend>Controls</legend>
+  <input type="button" value="Green" ng-click="lightUp('green')">
+  <input type="button" value="Blue" ng-click="lightUp('blue')">
+</fieldset>
+<fieldset ng-init="refreshStats();">
+  <legend>Environmental Statistics</legend>
+  <input type="button" ng-click="refreshStats()" value="refresh">
+  <p>Brightness: {{ stats.brightness }}</p>
+  <p>Temp: {{ stats.temp }}</p>
+</fieldset>
+</body>
+
+</html>
