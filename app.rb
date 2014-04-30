@@ -2,7 +2,7 @@ require 'sinatra'
 require 'subprocess'
 
 get '/' do
-  "Howdy!"
+  File.read(File.join('public', 'index.html'))
 end
 
 get '/hi' do
@@ -43,4 +43,8 @@ get '/brightness' do
 	  puts "Unable to communicate with device"
 	  return "OH NOES!"
 	end
+end
+get '/stats' do
+	content_type 'application/json'
+	"{ \"brightness\": #{[1,2,3,4].sample}, \"temp\": #{[10,20,30,40].sample} }"
 end
