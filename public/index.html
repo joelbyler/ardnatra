@@ -9,12 +9,13 @@
 <h2>Arduino Controller</h2>
 <fieldset>
   <legend>Controls</legend>
-  <input type="button" value="Green" ng-click="lightUp('green')">
-  <input type="button" value="Blue" ng-click="lightUp('blue')">
+  <input class="control-button red" type="button" value="Green" ng-click="lightUp('green')">
+  <input class="control-button blue" type="button" value="Blue" ng-click="lightUp('blue')">
 </fieldset>
 <fieldset ng-init="refreshStats();">
   <legend>Environmental Statistics</legend>
-  <input type="button" ng-click="refreshStats()" value="refresh">
+  <input class="control-button" type="button" ng-click="refreshStats()" value="refresh">
+  <br/><br/><hr/>
   <p>Brightness: {{ stats.brightness }}</p>
   <p>Temp: {{ stats.temp }}</p>
 </fieldset>

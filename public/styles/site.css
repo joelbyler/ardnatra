@@ -1,0 +1,30 @@
+body{
+  font-size: 1.4em;
+  font-family: sans-serif;
+}
+
+fieldset {
+  width: 40%;
+  margin: auto;
+}
+h2 {
+  margin-top: 5%;
+  text-align: center;
+}
+.control-button{
+  -webkit-appearance: none;
+  width: 160px;
+  height: 90px;
+  font-size: 1.4em;
+}
+
+.red{
+  background-color: red;
+}
+
+.blue{
+  background-color: cyan;
+}
+
+.refresh{
+}
